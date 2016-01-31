@@ -1,0 +1,249 @@
+ls
+wifi-menu
+sudo wifi-menu
+ping -c 3 google.com
+ls
+pacman -Syu ansible git
+sudo pacman -Syu ansible git
+ls
+git clone http://github.com/barbour-em/dotfiles 
+cd dotfiles/
+ls
+cd playbooks/
+ls
+./launch 
+mkdir ~/bin
+./launch 
+./launch 
+cd
+ls
+pacman -S screenfetch
+sudo pacman -S screenfetch
+screenfetch
+chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
+pacman -S zs
+sudo pacman -S zsh
+pacman -S zs
+sudo chsh -s /bin/zsh
+zsh
+for i in $(ls /sys/bus/usb/devices/*/power/level);do echo auto > $i;done
+sudo for i in $(ls /sys/bus/usb/devices/*/power/level);do echo auto > $i;done
+echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+sudo echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+pacman -S zs
+sudo pacman -S zsh
+pacman -S zs
+sudo chsh -s /bin/zsh
+zsh
+for i in $(ls /sys/bus/usb/devices/*/power/level);do echo auto > $i;done
+sudo for i in $(ls /sys/bus/usb/devices/*/power/level);do echo auto > $i;done
+echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+sudo echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+cd tmp/
+mkdir lol
+touch lol/lol.txt
+touch lol/lol.pdf
+yes | rm -r lol/*
+rm lol/
+rm lol/ -rf
+cd
+clear
+ls
+uname -a
+uname -a
+ack
+zsh
+clear
+cd
+uname -a
+rm new.py 
+cat < term.py > lol
+ls
+less lol
+zsh
+clear
+./adb shell dumpsys batterystats
+tmux kill-sessions
+cd
+ls
+nano ./.tmux.conf
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+tmu attach
+tmux list-session
+tmux attach
+defaults write com.apple.finder AppleShowAllFiles YES
+killAll finder
+killAll Finder
+brew install ansible
+rm -rf /Users/cooperpellaton/dotfiles
+git clone https://github.com/barbour-em/dotfiles.git ~/dotfiles
+brew cask install python2
+brew cask install python
+sudo ln -s /usr/bin/python2.6 /usr/bin/python2
+rm -rf /Users/cooperpellaton/.emacs.d
+cd ~/dotfiles/playbooks && ./launch
+tmux list-sessions
+tmux
+bin/bash
+tmux
+tmux list-session
+tmux attach
+tmux 
+tmux
+/Users/cooperpellaton/Downloads/pure-master/pure.zsh; exit;
+tmux attch
+tmux attach
+tmux
+brew cask install atom
+cd
+ls
+ls -al
+cd .atom
+ls
+nano config.cson
+defaults write com.apple.finder AppleShowAllFiles YES
+killAll Finder
+brew cask uninstall atom
+brew cask install atom
+apm stars --install
+defaults write com.apple.Finder AppleShowAllFiles NO
+killAll Finder
+tmux
+tmux
+ssh root@104.236.16.232 -p 46516
+curl -I https://cepp.ch/about.html
+tmux
+brew update
+git cleanup
+brew cleanup
+brew cask cleanup
+brew cask update
+brew install
+brew ansible update
+tmux list-sessions
+tmux list-session
+tmux
+brew update
+tmux
+tmux
+top
+npm install -g --force node-inspector
+tmux
+tmux
+ls
+cd Documents
+ls
+cd Projects
+ls
+mkdir PrinterTest
+cd PrinterTest
+npm install --save express
+npm install --save body-parser
+npm install --save havenondemand
+touch index.js
+node index.js
+ls
+npm start
+npm install --save express
+npm init
+npm install --save express
+npm install --save body-parser
+npm install --save havenondemand
+node index.js
+node index.js
+sudo npm install npm -g
+npm install
+npm install -g express-generator
+node index.j
+node index.js
+echo $PATH
+node
+npm update
+ls
+cd ..
+ls
+cd Epic-Print-Driver
+ls
+npm update
+npm ls -g
+npm link
+npm install continuation-local-storage
+npm install continuation-local-storage --save
+npm start
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+node server.js
+npm install jquery --save
+node server.js
+git status
+git add -A
+git commit -m "Adding santized data."
+git push
+git push
+brew update
+brew update
+brew cleanup
+brew cleanup
+brew outdated
+brew upgrade
+brew upgrade
+brew cleanup
+brew update
+brew upgrade
+brew cleanup
+brew update
+brew update
+test
+ls
+apm install chester
+apm install chester-atom-syntax
+apm install file-icons
+apm install autoclose-html
+brew cask uninstall filezilla
+brew update
+brew upgrade
+brew linkapps macvim
+brew cleanup
+brew cask install visual-studio-ce
+brew cask install visual-studio
+brew cask install visual-studio-code
+brew cask install MySQLWorkBench
+brew update
+brew upgrade
+brew cleanu
+brew cleanup
+brew cask install MySQLWorkBench
+apm install atom-beautify
+brew install homebrew/php/php-cs-fixer
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/php
+brew install php5x php5x-phalcon
+php -v
+php -v
+tmux
+tmux
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+ssh root@104.236.59.4
+brew install php5.6 php5.6-phalcon
+/Users/cooperpellaton/.profile; exit;
+/Users/cooperpellaton/.profile; exit;
+open ~/.profile

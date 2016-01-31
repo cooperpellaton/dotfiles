@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Counter</key>
+	<integer>2</integer>
+	<key>KnownNetworks</key>
+	<dict>
+		<key>wifi.ssid.&lt;554d4153 53&gt;</key>
+		<dict>
+			<key>AutoLogin</key>
+			<false/>
+			<key>Captive</key>
+			<false/>
+			<key>ChannelHistory</key>
+			<array>
+				<dict>
+					<key>Channel</key>
+					<integer>149</integer>
+					<key>Timestamp</key>
+					<date>2015-10-29T04:52:34Z</date>
+				</dict>
+			</array>
+			<key>Closed</key>
+			<false/>
+			<key>CollocatedGroup</key>
+			<array/>
+			<key>Disabled</key>
+			<false/>
+			<key>LastConnected</key>
+			<date>2015-10-29T04:52:34Z</date>
+			<key>Passpoint</key>
+			<false/>
+			<key>PersonalHotspot</key>
+			<false/>
+			<key>PossiblyHiddenNetwork</key>
+			<false/>
+			<key>RoamingProfileType</key>
+			<string>Multi</string>
+			<key>SPRoaming</key>
+			<false/>
+			<key>SSID</key>
+			<data>
+			VU1BU1M=
+			</data>
+			<key>SSIDString</key>
+			<string>UMASS</string>
+			<key>SecurityType</key>
+			<string>Open</string>
+			<key>SystemMode</key>
+			<true/>
+			<key>TemporarilyDisabled</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>PreferredOrder</key>
+	<array>
+		<string>wifi.ssid.&lt;554d4153 53&gt;</string>
+	</array>
+	<key>UpdateHistory</key>
+	<array>
+		<dict>
+			<key>Previous</key>
+			<dict/>
+			<key>Timestamp</key>
+			<date>2015-10-28T20:35:59Z</date>
+		</dict>
+	</array>
+	<key>Version</key>
+	<integer>2200</integer>
+</dict>
+</plist>

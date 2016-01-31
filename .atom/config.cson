@@ -1,0 +1,20 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "ebf5edaf-0aca-4518-9ee0-3f9af104f43e"
+  core:
+    projectHome: "/Users/cooperpellaton/documents/Projects"
+    themes: [
+      "one-dark-ui"
+      "chester-atom-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    softWrap: true
+  "exception-reporting":
+    userId: "a0aeca53-cdde-610d-7a39-353162ae0966"
+  minimap:
+    displayMinimapOnLeft: true
+  welcome:
+    showOnStartup: false

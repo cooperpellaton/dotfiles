@@ -1,0 +1,16 @@
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <sdk-version>1.2.0.RC6d</sdk-version>
+    <description>.</description>
+    
+    <id>com.privateinternetaccess.vpn</id>
+    <name>Private Internet Access</name>
+    <version>1.0</version>
+    <publisher>London Trust Media, Inc.</publisher>
+    <url>https://www.privateinternetaccess.com/</url>
+    <icon>default_app_logo.png</icon>
+    <copyright>Copyright (c) 2012 London Trust Media, Inc.</copyright>
+    <window>
+        <url>app://index.html</url>
+        <visible>false</visible>
+    </window>
+</ti:app>

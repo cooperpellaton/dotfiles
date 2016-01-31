@@ -1,0 +1,1 @@
+/Users/cooperpellaton/dotfiles/home/.bash_logout

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'pp'
+
+File.open("/tmp/wtf", "ab") do |f|
+  f.puts
+  f.write PP.pp(ARGV,'')
+  f.puts
+end
