@@ -1,0 +1,28 @@
+div#pastePopup {
+  z-index:10000;
+  position:absolute;
+  width:130px;
+  height:25px;
+  border-radius:4px;
+  box-shadow: 2px 2px 4px #dbdbdb;
+  background-color:#fff;
+  border:1px solid #b7b7b7;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color:#111111;
+  font-size:0.95em;
+}
+  div#pastePopup div.pastePopupBlock {
+    margin-top:4px;
+    height:19px;
+  }
+    div#pastePopup div.pastePopupBlock:hover {
+      background: -webkit-linear-gradient(top, #8d959d, #68717b);
+      background-color:#626a73;
+      color:#fff;
+      cursor:default;
+    }
+
+    div#pastePopup div.pastePopupBlock div.pastePopupText {
+     -webkit-user-select: none;
+      padding-left:18px;
+    }

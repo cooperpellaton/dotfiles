@@ -1,0 +1,211 @@
+<!--
+   Private Internet Access Desktop Application
+   Copyright (c) 2012 London Trust Media, Inc.
+   All Rights Reserved.
+-->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/design.css"/>
+  <link rel="stylesheet" type="text/css" href="css/paste.css"/>
+  <script src="javascript/jquery.min.js" type="text/javascript"></script>
+  <script src="javascript/common.js" type="text/javascript"></script>
+  <script src="javascript/settings.js" type="text/javascript"></script>
+  <script src="javascript/paste.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="pastePopup" style="display:none">
+  <div class="pastePopupBlock">
+    <div id="paste_action" class="pastePopupText">
+      Paste
+    </div>
+  </div>
+</div>
+
+<div id='settingsWindow'>
+  <div id='settingsWindow_left'>
+    <img src="icon.png"><h1><b>private</b>internetaccess<br><b>vpn</b> settings</h1>
+    <div style="clear:both"></div>
+    <h3>Username</h3>
+    <input type='text' id='username'><br>
+    <br>
+    <h3>Password</h3>
+    <input type='password' id='password'><br>
+    <a target="_blank" class='forgot_password' href="https://www.privateinternetaccess.com/pages/reset-password.html">Forgot password?</a>
+    <br>
+    <input type='checkbox' id='run_on_startup'>
+    <label for='run_on_startup' style="font-size: small">Start Application at Logon</label>
+    <br>
+    <input type='checkbox' id='connect_on_startup'>
+    <label for='connect_on_startup' style="font-size: small">Auto-Connect When App is Started</label>
+
+    <div class='advancedWindow'>
+      <table class='advancedWindow_settings'>
+        <tr>
+          <td class='advancedWindow_label'>
+            Region
+          </td>
+          <td class='advancedWindow_setting'>
+            <div class='region'>
+              <select name='region' id='region'>
+                <option>auto</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='app_version' style="display:none">v.53</div>
+    <button id='button_save'>Save</button>
+    <button id='button_advanced'>Advanced</button>
+    <button id='button_enc'>Encryption</button>
+  </div>
+
+  <div id='settingsWindow_right_container'>
+    <div id='settingsWindow_right'>
+      <div id='advancedWindow' class='advancedWindow'>
+        <table class='advancedWindow_settings'>
+          <tr>
+            <td class='advancedWindow_label'>
+              Connection Type
+            </td>
+            <td class='advancedWindow_setting'>
+              <select id='proto'>
+                <option value="udp" selected>udp&nbsp;&nbsp;&nbsp;</option>
+                <option value="tcp">tcp&nbsp;&nbsp;&nbsp;</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              Remote Port
+            </td>
+            <td class='advancedWindow_setting'>
+              <select name='advanced_rport' id='rport'>
+                <div class='rport'>
+                  <option>auto</option>
+                </div>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              Local Port
+            </td>
+            <td class='advancedWindow_setting'>
+              <input type='text' name='advanced_lport' id='lport'>
+            </td>
+          </tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              Port Forwarding
+            </td>
+            <td class='advancedWindow_setting'>
+              <input type='checkbox' name='advanced_portforward' id='portforward'>
+            </td>
+          </tr>
+          <tr><td colspan=2 class='advancedWindow_description'>
+            <a target="_blank" href="https://www.privateinternetaccess.com/pages/client-support#portforward">Port shown</a> in tooltip after connecting
+          </td></tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              VPN Kill Switch
+            </td>
+            <td class='advancedWindow_setting'>
+              <input type='checkbox' name='advanced_killswitch' id='killswitch'>
+            </td>
+          </tr>
+          <tr><td colspan=2 class='advancedWindow_description'>
+              <a target="_blank" href="https://www.privateinternetaccess.com/pages/client-support#disconnectprotect">Disable your internet</a> when VPN disconnects
+          </td></tr>
+
+          <tr class='advancedWindow_dnsleak'>
+            <td class='advancedWindow_label'>
+              DNS Leak Protection
+            </td>
+            <td class='advancedWindow_setting'>
+              <input type='checkbox' name='advanced_dnsleak' id='dnsleak'>
+            </td>
+          </tr>
+          <tr><td colspan=2 class='advancedWindow_dnsleak advancedWindow_description'>
+            Prevent <a target="_blank" href="https://www.privateinternetaccess.com/pages/client-support#dnsleak">leaking DNS</a> queries while on VPN
+          </td></tr>
+
+          <tr class='advancedWindow_ipv6leak'>
+            <td class='advancedWindow_label'>
+              IPv6 Leak Protection
+            </td>
+            <td class='advancedWindow_setting'>
+              <input type='checkbox' name='advanced_ipv6leak' id='ipv6leak'>
+            </td>
+          </tr>
+          <tr><td colspan=2 class='advancedWindow_ipv6leak advancedWindow_description'>
+              <a target="_blank" href="https://www.privateinternetaccess.com/pages/client-support#ipv6leak">Disable IPv6</a> while on the VPN
+          </td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div id='settingsWindow_right_enc'>
+      <div id='advancedWindow' class='advancedWindow'>
+        <table class='advancedWindow_settings'>
+          <tr>
+            <td class='advancedWindow_label'>
+              Data Encryption
+            </td>
+            <td class='advancedWindow_setting'>
+              <select id='symmetric_cipher'>
+                <option value="aes-128-cbc" selected>AES-128</option>
+                <option value="aes-256-cbc">AES-256</option>
+                <option value="bf-cbc">Blowfish</option>
+                <option value="none">None</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              Data Authentication
+            </td>
+            <td class='advancedWindow_setting'>
+              <select id='symmetric_auth'>
+                <option value="sha1" selected>SHA1&nbsp;</option>
+                <option value="sha256">SHA256</option>
+                <option value="none">None</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td class='advancedWindow_label'>
+              Handshake
+            </td>
+            <td class='advancedWindow_setting'>
+              <select id='handshake_enc'>
+                <option value="rsa2048" selected>RSA-2048</option>
+                <option value="rsa3072">RSA-3072</option>
+                <option value="rsa4096">RSA-4096</option>
+                <option value="ecdsa256k1">ECC-256k1&nbsp;</option>
+                <option value="ecdsa256">ECC-256r1&nbsp;</option>
+                <option value="ecdsa521">ECC-521&nbsp;</option>
+              </select>
+            </td>
+          </tr>
+          <tr><td class="encryption_info" colspan=2>
+            We recommend using the <a href="https://www.privateinternetaccess.com/pages/vpn-encryption" target=_blank>default settings</a>
+          </td></tr>
+          <tr id="encryption_disclaimer"><td class="encryption_info" colspan=2>
+            <span style="color: rgb(210, 80, 80); font-size: 0.9em">These settings may <a href="https://www.privateinternetaccess.com/pages/vpn-encryption#warnings" target=_blank style="color: rgb(180, 60, 60);">decrease your safety</a></span>
+          </td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
