@@ -1,4 +1,0 @@
-# one file extension per line please :)
-.clj
-.cljs
-.cljc
