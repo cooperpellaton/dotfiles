@@ -1,0 +1,107 @@
+@import "ui-variables";
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding;
+  background: @background-color-dark;
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid @tool-panel-border-color;
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height;
+    color: @text-color;
+    padding-left: 0;
+    margin-left: 10px;
+
+    .title {
+      transition: .1s ease-in;
+    }
+
+    &, &:before {
+      background: @tab-bg-color;
+      border-bottom: 1px solid @tool-panel-border-color;
+    }
+
+    &:before {
+      background: @tab-bg-color;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -16px;
+      height: @tab-height;
+      width: 16px;
+    }
+
+    .close-icon {
+      z-index: 3;
+      line-height: @tab-height;
+      -webkit-transform: none;
+      color: @text-color;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      right: 14px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    &.modified:hover .close-icon:hover {
+      color: @text-color-highlight;
+    }
+
+    &:first-child {
+      margin-left: 5px;
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    line-height: @tab-height;
+    color: @text-color-highlight;
+    border-right: 1px solid @tool-panel-border-color;
+
+    .title{
+      position: relative;
+      transform: translateY(-1px);
+    }
+
+    .close-icon {
+      line-height: @tab-height;
+      color: @text-color;
+    }
+
+    &, &:before {
+      background-image: -webkit-linear-gradient(bottom, @base00, lighten(@base00, 2%));
+      height: @tab-height + 0px;
+      border-bottom: none;
+      border-left: 1px solid @tool-panel-border-color;
+    }
+  }
+
+  .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon {
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
+  }
+}
