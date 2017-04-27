@@ -1,4 +1,0 @@
-export PATH="/Users/cooperpellaton/.node:PATH"
-
-# added by Miniconda3 4.3.11 installer
-export PATH="/Users/cooperpellaton/miniconda3/bin:$PATH"
