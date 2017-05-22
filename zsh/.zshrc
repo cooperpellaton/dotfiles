@@ -87,3 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /Users/cooperpellaton/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Enable the use of `subl` in the terminal.
+export PATH=$PATH:$HOME/bin
+export EDITOR='subl'

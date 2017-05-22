@@ -1,3 +1,6 @@
+;; This is to solve the meta problem on the mac
+(set-keyboard-coding-system nil)
+
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -73,7 +76,7 @@
  '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
-    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "a6a8c2f747511ef4e2dbbff193c1779219fc09103ada6de731f33c528fdb19ad" "87060cd4dbb2a9cae756d0e9876ff11abf4aad85c93ed6885bd44b2b5978845d" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" default)))
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "a6a8c2f747511ef4e2dbbff193c1779219fc09103ada6de731f33c528fdb19ad" "87060cd4dbb2a9cae756d0e9876ff11abf4aad85c93ed6885bd44b2b5978845d" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" default)))
  '(package-selected-packages
    (quote
     (better-defaults clang-format find-file-in-project neotree highlight-parentheses auto-complete-clang flycheck git-gutter company-c-headers auto-package-update auto-highlight-symbol auto-complete-chunk auto-compile color-theme-sanityinc-tomorrow autofit-frame auto-complete slime))))
@@ -83,3 +86,36 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
+
+;; Added by Kite
+(load-file "~/.emacs.d/kite.el")
