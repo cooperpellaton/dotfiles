@@ -8,7 +8,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
+#ZSH_THEME="pure"
+ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -91,3 +92,6 @@ source /Users/cooperpellaton/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Enable the use of `subl` in the terminal.
 export PATH=$PATH:$HOME/bin
 export EDITOR='subl'
+
+
+source "/Users/cooperpellaton/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
