@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias hg='history | grep'
 source /Users/cooperpellaton/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable the use of `subl` in the terminal.
