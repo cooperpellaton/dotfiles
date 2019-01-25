@@ -2,10 +2,11 @@
 
 ## Easiest Setup
 
-To get this working on your system (assuming Ubuntu) do the following:
+To get these files up and working on your system (assuming Ubuntu) do the following:
 
 ```bash
-sudo apt install git stow -y
+sudo apt install git stow tmux vim-y
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/cooperpellaton/dotfiles.git
 cd dotfiles
 stow tmux
@@ -13,6 +14,7 @@ stow bash
 stow ssh
 stow vim
 stow themes
+vim +PluginInstall +qall
 # stow any other folders that might be useful
 ```
 
