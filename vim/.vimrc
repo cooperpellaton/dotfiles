@@ -17,8 +17,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'chriskempson/base16-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'valloric/youcompleteme'
+Plugin 'kien/ctrlp.vim'
+
+" Some defaults for Vim.
+set number
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

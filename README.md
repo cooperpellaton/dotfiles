@@ -5,7 +5,7 @@
 To get these files up and working on your system (assuming Ubuntu) do the following:
 
 ```bash
-sudo apt install git stow tmux vim-y
+sudo apt install git stow tmux vim -y
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/cooperpellaton/dotfiles.git
 cd dotfiles
