@@ -73,7 +73,7 @@ xterm*|rxvt*)
 esac
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  exec tmux attach
 fi
 
 # enable color support of ls and also add handy aliases
