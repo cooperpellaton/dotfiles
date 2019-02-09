@@ -6,7 +6,8 @@
 cd ~
 
 # Install all the files programs and themes, etc. that we want.
-sudo apt install git stow tmux neovim ranger fonts-powerline -y
+sudo apt install git stow tmux neovim ranger fonts-powerline fish python3-dev python3-pip python3-setuptools -y
+sudo pip3 install thefuck
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 git clone https://github.com/cooperpellaton/dotfiles.git
@@ -21,7 +22,16 @@ stow bash
 stow ssh
 stow nvim
 stow vim
-stow themes
+stow fish
 vim +PluginInstall +qall
 
-echo "All files and programs have been installed!\m"
+# Install oh-my-fish
+curl -L https://get.oh-my.fish | fish
+
+# Make our default shell `fish`.
+echo /usr/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/bin/fish
+
+# Let's bootstrap the fish configuration script.
+chmod +x setup.fish
+fish ./setup.fish

@@ -22,6 +22,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'w0rp/ale'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 
