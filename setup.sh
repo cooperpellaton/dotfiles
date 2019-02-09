@@ -28,10 +28,11 @@ vim +PluginInstall +qall
 # Install oh-my-fish
 curl -L https://get.oh-my.fish | fish
 
-# Make our default shell `fish`.
-echo /usr/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/bin/fish
-
-# Let's bootstrap the fish configuration script.
+# We don't do this anymore because to maintain compatability with Bash on Ubuntus on Windows, we need to launch fish
+# from within the .bashrc. This is so that our colors load properly and we can load TMUX.
+	# Make our default shell `fish`.
+	# echo /usr/bin/fish | sudo tee -a /etc/shells
+	# chsh -s /usr/bin/fish
+	# Let's bootstrap the fish configuration script.
 chmod +x setup.fish
 fish ./setup.fish
