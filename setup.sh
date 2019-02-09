@@ -13,13 +13,14 @@ fi
 sudo apt update && sudo apt upgrade -y
 sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm -y
 sudo npm install -g tldr
+echo("The Rust install will take some time. Don't worry if it hangs.")
 curl https://sh.rustup.rs -sSf | sh
 
 # Now move on to dotfile configuration.
 cd ~
 
 # Install all the files programs and themes, etc. that we want.
-sudo apt install git stow tmux neovim ranger fonts-powerline fish python3-dev python3-pip python3-setuptools -y
+sudo apt install git stow tmux neovim ranger fonts-powerline fish python3-dev python3-pip python3-setuptools htop -y
 sudo pip3 install thefuck
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
@@ -38,6 +39,12 @@ stow nvim
 stow vim
 stow fish
 vim +PluginInstall +qall
+
+# Setup YCM.
+cd ~/.vim/bundle/youcompleteme/  
+pythonn install.py --clang-completer --java-completer --ts-completer --rust-completer
+
+set GitGutterEnable
 
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
