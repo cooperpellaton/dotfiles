@@ -10,6 +10,10 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Install some platform tools. This will vary based on my development, but in general I want:
+#	* C
+#	* Java
+# 	* Python
+#	* Rust
 sudo apt update && sudo apt upgrade -y
 sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm -y
 sudo npm install -g tldr
@@ -44,8 +48,6 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/youcompleteme/  
 pythonn install.py --clang-completer --java-completer --ts-completer --rust-completer
 
-set GitGutterEnable
-
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
 git config --global user.name "Cooper Pellaton"
@@ -55,6 +57,8 @@ git config --global user.name "Cooper Pellaton"
 	# Make our default shell `fish`.
 	# echo /usr/bin/fish | sudo tee -a /etc/shells
 	# chsh -s /usr/bin/fish
+
 # Let's bootstrap the fish configuration script.
+cd ~/dotfiles/
 chmod +x setup.fish
 fish ./setup.fish
