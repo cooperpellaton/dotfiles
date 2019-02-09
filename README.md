@@ -5,8 +5,9 @@
 To get these files up and working on your system (assuming Ubuntu) do the following:
 
 ```bash
-sudo apt install git stow tmux vim -y
+sudo apt install git stow tmux neovim ranger -y
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 git clone https://github.com/cooperpellaton/dotfiles.git
 cd dotfiles
 stow tmux
@@ -39,14 +40,14 @@ home/
                 .bashrc
                 .bash_profile
                 .bash_logout
-            uzbl/
-                .config/
-                    uzbl/
-                        [...some files]
                 .local/
                     share/
                         uzbl/
                             [...some files]
+            nvim/
+            	.config/
+            		nvim/
+            			init.vim
             vim/
                 .vim/
                     [...some files]
@@ -58,7 +59,7 @@ and to get these files to be used by our system we'll do the following:
 ```bash
 $ cd ~/dotfiles
 $ stow bash
-$ stow uzbl
+$ stow nvim
 $ stow vim
 ```
 
