@@ -45,6 +45,7 @@ filetype plugin indent on    " required
 " Some defaults for VIm.
 set number
 set wrap
+set autoread
 
 " Colorscheme config.
 colorscheme gruvbox
