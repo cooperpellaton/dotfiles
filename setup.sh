@@ -25,8 +25,6 @@ stow vim
 stow fish
 vim +PluginInstall +qall
 
-# Install oh-my-fish
-curl -L https://get.oh-my.fish | fish
 
 # We don't do this anymore because to maintain compatability with Bash on Ubuntus on Windows, we need to launch fish
 # from within the .bashrc. This is so that our colors load properly and we can load TMUX.
