@@ -53,7 +53,7 @@ vim +PluginInstall +qall
 
 # Setup YCM.
 cd ~/.vim/bundle/youcompleteme/  
-pythonn install.py --clang-completer --java-completer --ts-completer --rust-completer
+python install.py --clang-completer --java-completer --ts-completer --rust-completer
 
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
