@@ -24,7 +24,7 @@ fi
 sudo apt update && sudo apt upgrade -y
 sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm -y
 sudo npm install -g tldr
-echo("The Rust install will take some time. Don't worry if it hangs.")
+echo "The Rust install will take some time. Don't worry if it hangs.\n"
 curl https://sh.rustup.rs -sSf | sh
 
 # Now move on to dotfile configuration.
