@@ -23,6 +23,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0rp/ale'
+Plugin 'airblade/vim-gitgutter'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 
@@ -43,12 +44,15 @@ filetype plugin indent on    " required
 
 " Some defaults for VIm.
 set number
+set wrap
+
+" Colorscheme config.
 colorscheme gruvbox
 set background=dark    " Setting dark mode
+
 " This populates the powerline fonts directory.
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
 	  let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-
