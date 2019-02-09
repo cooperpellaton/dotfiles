@@ -1,2 +1,9 @@
 .DS_Store
-fishd.*
+
+# Ignore fish submodules.
+fish/.config/fishd.*
+fish/.config/fish/conf.d
+
+# Ignore VIm submodules.
+vim/bundle
+~/.vim/bundle

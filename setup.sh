@@ -3,6 +3,12 @@
 
 # This is a setup script for my dotfiles. This *must* be run with `sudo`!
 
+# Install some platform tools. This will vary based on my development, but in general I want:
+sudo apt update && sudo apt upgrade -y
+sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm
+sudo npm install -g tldr
+
+# Now move on to dotfile configuration.
 cd ~
 
 # Install all the files programs and themes, etc. that we want.
