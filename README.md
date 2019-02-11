@@ -124,4 +124,4 @@ For more plugins and inspiration look at:
 
 * [Awesome Fish](https://github.com/jorgebucaran/awesome-fish)
 * [Vim Awesome](https://vimawesome.com/)
-
+* [Awesome Tmux](https://github.com/rothgar/awesome-tmux)
