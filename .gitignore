@@ -7,3 +7,6 @@ fish/.config/fish/conf.d
 # Ignore VIm submodules.
 vim/bundle
 ~/.vim/bundle
+
+# Ignore TMUX plugins.
+~/.tmux/plugins

@@ -24,6 +24,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0rp/ale'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tmux-plugins/vim-tmux'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 

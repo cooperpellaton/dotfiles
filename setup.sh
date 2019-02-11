@@ -28,6 +28,7 @@ sudo apt install git stow tmux neovim ranger fonts-powerline fish python3-dev py
 sudo pip3 install thefuck
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/cooperpellaton/dotfiles.git
 wget https://github.com/sharkdp/bat/releases/download/v0.10.0/bat_0.10.0_amd64.deb
 sudo dpkg -i bat_0.10.0_amd64.deb
