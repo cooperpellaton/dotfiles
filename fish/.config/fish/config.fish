@@ -10,3 +10,4 @@ setenv EDITOR nvim
 
 # system aliases
 alias upgrade="sudo apt update; and sudo apt upgrade -y"
+thefuck --alias | source
