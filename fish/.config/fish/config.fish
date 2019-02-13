@@ -7,3 +7,6 @@
 alias vim="nvim"
 alias vi="nvim"
 setenv EDITOR nvim
+
+# system aliases
+alias upgrade="sudo apt update; and sudo apt upgrade -y"
