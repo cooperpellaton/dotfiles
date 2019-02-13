@@ -15,7 +15,7 @@ fi
 # 	* Python
 #	* Rust
 sudo apt update && sudo apt upgrade -y
-sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm -y
+sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm curl -y
 sudo npm install -g tldr
 echo "The Rust install will take some time. Don't worry if it hangs.\n"
 curl https://sh.rustup.rs -sSf | sh
@@ -34,6 +34,15 @@ wget https://github.com/sharkdp/bat/releases/download/v0.10.0/bat_0.10.0_amd64.d
 sudo dpkg -i bat_0.10.0_amd64.deb
 rm bat_0.10.0_amd64.deb
 
+# Install TLDR
+npm install -g TLDR
+
+# Install Anaconda for Python 3.7
+cd /tmp/
+curl -O https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+chmod +x Anaconda3-2018.12-Linux-x86_64.sh
+./Anaconda3-2018.12-Linux-x86_64.sh
+
 # Now unpack the configuration files for our programs.
 cd dotfiles
 stow tmux
@@ -47,7 +56,7 @@ vim +PluginInstall +qall
 
 # Setup YCM.
 cd ~/.vim/bundle/youcompleteme/  
-python install.py --clang-completer --java-completer --ts-completer --rust-completer
+python install.py --clang-completer --java-completer --ts-completer
 
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
