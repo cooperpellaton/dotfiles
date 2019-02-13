@@ -25,6 +25,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'w0rp/ale'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'dracula/vim'
+Plugin 'scrooloose/nerdcommenter'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 
@@ -49,8 +51,12 @@ set wrap
 set autoread
 
 " Colorscheme config.
+" Config for grubox.
 colorscheme gruvbox
 set background=dark    " Setting dark mode
+" Uncomment below if Colorscheme should be Dracula
+"set syntax = on
+"color dracula
 
 " This populates the powerline fonts directory.
 let g:airline_powerline_fonts = 1
@@ -61,3 +67,10 @@ let g:airline_symbols.space = "\ua0"
 
 " Autolaunch VIm with NERDTree enabled.
 autocmd VimEnter * NERDTree
+
+" NERDTree Commenter Settings
+filetype plugin on
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
