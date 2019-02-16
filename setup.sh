@@ -17,8 +17,8 @@ fi
 sudo apt update && sudo apt upgrade -y
 sudo apt install default-jdk python-dev cmake gcc g++ nodejs npm curl -y
 sudo npm install -g tldr
-echo "The Rust install will take some time. Don't worry if it hangs.\n"
-curl https://sh.rustup.rs -sSf | sh
+#echo "The Rust install will take some time. Don't worry if it hangs.\n"
+#curl https://sh.rustup.rs -sSf | sh
 
 # Now move on to dotfile configuration.
 cd ~
@@ -35,7 +35,7 @@ sudo dpkg -i bat_0.10.0_amd64.deb
 rm bat_0.10.0_amd64.deb
 
 # Install TLDR
-npm install -g TLDR
+npm install -g tldr
 
 # Install Anaconda for Python 3.7
 cd /tmp/
@@ -43,13 +43,19 @@ curl -O https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
 chmod +x Anaconda3-2018.12-Linux-x86_64.sh
 ./Anaconda3-2018.12-Linux-x86_64.sh
 
+# We did this all with `sudo` so we need to change permissions.
+chown $USER: ~/.tmux/
+chown $USER: ~/.vim/
+
 # Now unpack the configuration files for our programs.
-cd dotfiles
+cd ~/dotfiles/
+rm -r ~/.tmux && rm -r ~/.tmux.conf
 stow tmux
 rm ~/.bashrc
 stow bash
 stow ssh
 stow nvim
+rm ~/.vimrc
 stow vim
 stow fish
 vim +PluginInstall +qall
