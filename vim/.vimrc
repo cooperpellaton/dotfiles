@@ -32,6 +32,7 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'dracula/vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'tpope/vim-sleuth'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 
