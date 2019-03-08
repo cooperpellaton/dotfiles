@@ -3,6 +3,9 @@
 # start_tmux
 # exec tmux attach
 
+# bobthefish settings
+set theme_color_scheme dracula
+
 # alias vim to neovim because we're ~~modern~~
 alias vim="nvim"
 alias vi="nvim"
