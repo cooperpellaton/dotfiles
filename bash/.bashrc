@@ -98,6 +98,7 @@ alias l='ls -CF'
 # alias vim to neovim because we're ~~modern~~
 alias vim="nvim"
 alias vi="nvim"
+export BAT_THEME="TwoDark"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
