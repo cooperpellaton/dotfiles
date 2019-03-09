@@ -5,6 +5,6 @@
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
 # Install fish plugins
-fisher add oh-my-fish/theme-bobthefish
-echo "All files and programs have been installed!\n";
+fisher add oh-my-fish/theme-batman
+echo "All files and programs have been installed!";
 fish
