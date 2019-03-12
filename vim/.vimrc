@@ -33,6 +33,7 @@ Plugin 'dracula/vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'tpope/vim-sleuth'
+Plugin 'Yggdroot/indentLine'
 
 set rtp+=~/.vim/bundle/gruvbox/autoload/gruvbox.vim
 
