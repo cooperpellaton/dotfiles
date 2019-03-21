@@ -19,8 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'valloric/youcompleteme'
@@ -86,12 +85,10 @@ let onedark_terminal_italics = 1
 colorscheme onedark
 set background=dark 	" Only heathens use lightmode.
 
-" This populates the powerline fonts directory.
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-	  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+" lightline config.
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ }
 
 " Autolaunch VIm with NERDTree enabled.
 autocmd VimEnter * NERDTree
