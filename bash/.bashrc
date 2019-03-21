@@ -146,4 +146,4 @@ unset __conda_setup
 # <<< conda init <<<
 
 # now that all the config is done, switch to fish!
-exec fish
+#exec fish
