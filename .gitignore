@@ -11,3 +11,6 @@ vim/bundle
 
 # Ignore TMUX plugins.
 ~/.tmux/plugins
+
+# Ignore fzf
+~/.fzf/

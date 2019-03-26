@@ -14,6 +14,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Include fzf in the runtime path for loading plugin.
+set rtp+=~/.fzf
+
 " Plugins are listed below.
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
@@ -34,6 +37,7 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -147,3 +147,5 @@ unset __conda_setup
 
 # now that all the config is done, switch to fish!
 #exec fish
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -64,6 +64,10 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/youcompleteme/  
 python install.py --clang-completer --java-completer --ts-completer
 
+# Install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
 git config --global user.name "Cooper Pellaton"
