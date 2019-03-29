@@ -25,7 +25,6 @@ Plugin 'ervandew/supertab'
 Plugin 'itchyny/lightline.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'w0rp/ale'
@@ -38,6 +37,14 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf.vim'
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
