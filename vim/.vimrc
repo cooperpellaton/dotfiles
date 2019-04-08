@@ -33,11 +33,13 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'dracula/vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-repeat'
+Plugin 'godlygeek/tabular'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf.vim'
-Plugin 'wikitopian/hardmode'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -88,7 +90,6 @@ augroup END
 set wrap
 set autoread
 syntax on
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Colorscheme config.
 " Config for grubox.
