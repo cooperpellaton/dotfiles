@@ -37,6 +37,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'wikitopian/hardmode'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -78,10 +79,16 @@ if (empty($TMUX))
 endif
 
 " Some defaults for VIm.
-set number
+set number relativenumber
+augroup numbertoggle
+autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 set wrap
 set autoread
 syntax on
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Colorscheme config.
 " Config for grubox.
