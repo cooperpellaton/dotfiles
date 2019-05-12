@@ -110,7 +110,7 @@ let g:lightline = {
       \ }
 
 " Autolaunch VIm with NERDTree enabled.
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " NERDTree Commenter Settings
 filetype plugin on
