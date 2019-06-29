@@ -1,33 +1,20 @@
 function fish_prompt
-	# Store the exit code of the last command
-	set -g sf_exit_code $status
-	set -g SPACEFISH_VERSION 2.2.2
+  test $status -ne 0;
+    and set -l colors 600 900 c00
+    or set -l colors 333 666 aaa
 
-	# ------------------------------------------------------------------------------
-	# Configuration
-	# ------------------------------------------------------------------------------
+  set -l pwd (prompt_pwd)
+  set -l base (basename "$pwd")
 
-	__sf_util_set_default SPACEFISH_PROMPT_ADD_NEWLINE true
-	__sf_util_set_default SPACEFISH_PROMPT_FIRST_PREFIX_SHOW false
-	__sf_util_set_default SPACEFISH_PROMPT_PREFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_SUFFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_PREFIX "via "
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
-	__sf_util_set_default SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell julia docker aws conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char
+  set -l expr "s|~|"(__batman_color_fst)"^^"(__batman_color_off)"|g; \
+               s|/|"(__batman_color_snd)"/"(__batman_color_off)"|g;  \
+               s|"$base"|"(__batman_color_fst)$base(__batman_color_off)" |g"
 
-	# ------------------------------------------------------------------------------
-	# Sections
-	# ------------------------------------------------------------------------------
+  echo -n (echo "$pwd" | sed -e $expr)(__batman_color_off)
 
-	# Keep track of whether the prompt has already been opened
-	set -g sf_prompt_opened $SPACEFISH_PROMPT_FIRST_PREFIX_SHOW
+  for color in $colors
+    echo -n (set_color $color)">"
+  end
 
-	if test "$SPACEFISH_PROMPT_ADD_NEWLINE" = "true"
-		echo
-	end
-
-	for i in $SPACEFISH_PROMPT_ORDER
-		eval __sf_section_$i
-	end
-	set_color normal
+  echo -n " "
 end
