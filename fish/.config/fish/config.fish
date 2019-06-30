@@ -32,6 +32,8 @@ alias ip="curl icanhazip.com"
 # copy the working directory path
 alias cpwd='pwd|tr -d "\n"|clip.exe'
 
+# Source the fish config.
+ source /home/cooper/anaconda3/etc/fish/conf.d/conda.fish
 
 
 # >>> conda initialize >>>
