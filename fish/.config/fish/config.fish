@@ -33,3 +33,9 @@ alias ip="curl icanhazip.com"
 alias cpwd='pwd|tr -d "\n"|clip.exe'
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval (eval /home/cooper/anaconda3/bin/conda "shell.fish" "hook" $argv)
+# <<< conda initialize <<<
+
