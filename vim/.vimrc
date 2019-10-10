@@ -39,6 +39,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'godlygeek/tabular'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
+Plugin 'rakr/vim-one'
 Plugin 'junegunn/fzf.vim'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -95,14 +96,20 @@ syntax on
 " Config for grubox.
 " Uncomment below if colorscheme should be Gruvbox.
 "colorscheme gruvbox
-"set background=dark    " Setting dark mode
+"#set background=dark    " Setting dark mode
 " Uncomment below if Colorscheme should be Dracula
-"set syntax = on
 "color dracula
+"set background=dark
 " Config for onedark
-let onedark_terminal_italics = 1
-colorscheme onedark
-set background=dark 	" Only heathens use lightmode.
+"let onedark_terminal_italics = 1
+"colorscheme onedark
+"set background=dark 	" Only heathens use lightmode.
+" Uncomment below for vim-one color scheme.
+colorscheme one
+let g:one_allow_italics = 1
+set background=dark
+
+
 
 " lightline config.
 let g:lightline = {
