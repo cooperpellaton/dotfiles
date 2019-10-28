@@ -50,6 +50,9 @@ Plugin 'chaoren/vim-wordmotion'
 Plugin 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plugin 'tmsvg/pear-tree'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-endwise'
+Plugin 'ncm2/float-preview.nvim'
+Plug 'Shougo/echodoc.vim'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -58,6 +61,9 @@ else
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+" Automatically close the Deoplete preview window after completion
+" (https://github.com/Shougo/deoplete.nvim/issues/115)
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -105,20 +111,15 @@ syntax on
 " Config for grubox.
 " Uncomment below if colorscheme should be Gruvbox.
 "colorscheme gruvbox
-"#set background=dark    " Setting dark mode
 " Uncomment below if Colorscheme should be Dracula
 "color dracula
-"set background=dark
 " Config for onedark
 "let onedark_terminal_italics = 1
 "colorscheme onedark
-"set background=dark 	" Only heathens use lightmode.
 " Uncomment below for vim-one color scheme.
 colorscheme one
 let g:one_allow_italics = 1
 set background=dark
-
-
 
 " lightline config.
 let g:lightline = {
@@ -147,3 +148,20 @@ let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_smart_backspace   = 1
 let g:pear_tree_smart_closers     = 1
 let g:pear_tree_smart_openers     = 1
+
+"""""""""""
+" Echodoc "
+"""""""""""
+
+" Use neovim's floating text for documentation
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
+" To use a custom highlight for the float window, change Pmenu to your highlight group
+highlight link EchoDocFloat Pmenu
+
+"""""""""""""""""
+" Float Preview "
+"""""""""""""""""
+
+" Don't dock the preview window to the bottom of the window
+let g:float_preview#docked = 1
