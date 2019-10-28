@@ -52,7 +52,7 @@ Plugin 'tmsvg/pear-tree'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-endwise'
 Plugin 'ncm2/float-preview.nvim'
-Plug 'Shougo/echodoc.vim'
+Plugin 'Shougo/echodoc.vim'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
