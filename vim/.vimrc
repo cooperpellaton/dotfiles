@@ -36,11 +36,20 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'godlygeek/tabular'
 Plugin 'Yggdroot/indentLine'
 Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
 Plugin 'junegunn/fzf.vim'
+Plugin 'tommcdo/vim-lion'
+Plugin 'wellle/targets.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'rhysd/clever-f.vim'
+Plugin 'chaoren/vim-wordmotion'
+Plugin 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plugin 'tmsvg/pear-tree'
+Plugin 'tpope/vim-unimpaired'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -117,7 +126,9 @@ let g:lightline = {
       \ }
 
 " Autolaunch VIm with NERDTree enabled.
-"autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree
+let g:NERDTreeUpdateOnCursorHold = 0
+let g:NERDTreeUpdateOnWrite      = 0
 
 " NERDTree Commenter Settings
 filetype plugin on
@@ -125,3 +136,14 @@ let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
+
+let g:lion_squeeze_spaces = 1
+let g:clever_f_across_no_line    = 1
+let g:clever_f_fix_key_direction = 1
+let g:clever_f_timeout_ms        = 3000
+nmap cw ce
+
+let g:pear_tree_repeatable_expand = 0
+let g:pear_tree_smart_backspace   = 1
+let g:pear_tree_smart_closers     = 1
+let g:pear_tree_smart_openers     = 1
