@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set clipboard=unnamed
 
 " Set the swapfile.
 set swapfile
@@ -165,3 +166,7 @@ highlight link EchoDocFloat Pmenu
 
 " Don't dock the preview window to the bottom of the window
 let g:float_preview#docked = 1
+
+" Autoreload NERDTree on file save.
+autocmd CursorHold,CursorHoldI * call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd w
+
