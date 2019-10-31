@@ -3,9 +3,6 @@
 # start_tmux
 # exec tmux attach
 
-# bobthefish settings
-#set theme_color_scheme dracula
-
 # alias vim to neovim because we're ~~modern~~
 alias vim="nvim"
 alias vi="nvim"
@@ -30,14 +27,14 @@ alias gs="git status -bs"
 alias ip="curl icanhazip.com"
 
 # copy the working directory path
-alias cpwd='pwd|tr -d "\n"|clip.exe'
+alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Source the fish config.
- source /usr/local/anaconda3/etc/fish/conf.d/conda.fish
-
+source /usr/local/anaconda3/etc/fish/conf.d/conda.fish
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval (eval /usr/local/anaconda3/bin/conda "shell.fish" "hook" $argv)
 # <<< conda initialize <<<
 
+eval (starship init fish)
