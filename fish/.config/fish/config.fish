@@ -8,9 +8,14 @@ alias vim="nvim"
 alias vi="nvim"
 setenv EDITOR nvim
 
+# Environment
+export BAT_CONFIG_PATH="~/.config/bat/bat.config"
+
 # ALIASES
 alias upgrade="sudo apt update; and sudo apt upgrade -y"
 alias cleanup="sudo apt autoremove -y; and sudo apt autoclean"
+alias k=kubectl
+alias tf=terraform
 thefuck --alias | source
 
 ## GIT
@@ -36,5 +41,3 @@ source /usr/local/anaconda3/etc/fish/conf.d/conda.fish
 # !! Contents within this block are managed by 'conda init' !!
 eval (eval /usr/local/anaconda3/bin/conda "shell.fish" "hook" $argv)
 # <<< conda initialize <<<
-
-eval (starship init fish)

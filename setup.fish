@@ -1,10 +1,11 @@
 #!/usr/bin/fish
 # file: fish.sh
 
-# Install fisher
+# Install OMF
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
 # Install fish plugins
-fisher add oh-my-fish/theme-batman
-echo "All files and programs have been installed!";
-fish
+omf install https://github.com/evanlucas/fish-kubectl-completions
+omf install https://github.com/jorgebucaran/fish-nvm
+omf reload
+echo "Fish plugins installed!";
