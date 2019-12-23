@@ -9,13 +9,13 @@ alias vi="nvim"
 setenv EDITOR nvim
 
 # Environment
-export BAT_CONFIG_PATH="~/.config/bat/bat.config"
+export BAT_CONFIG_PATH="~/.config/bat/config"
 
 # ALIASES
-alias upgrade="sudo apt update; and sudo apt upgrade -y"
-alias cleanup="sudo apt autoremove -y; and sudo apt autoclean"
+alias uc="brew upgrade; brew cleanup"
 alias k=kubectl
 alias tf=terraform
+alias g=gcloud
 thefuck --alias | source
 
 ## GIT
@@ -34,10 +34,13 @@ alias ip="curl icanhazip.com"
 # copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 
-# Source the fish config.
+# Source the Conda fish config.
 source /usr/local/anaconda3/etc/fish/conf.d/conda.fish
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval (eval /usr/local/anaconda3/bin/conda "shell.fish" "hook" $argv)
-# <<< conda initialize <<<
+# The next line enables shell command completion for gcloud.
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+bass source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
+
+function fish_greeting
+  fortune -a
+end
