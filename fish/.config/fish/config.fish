@@ -11,8 +11,12 @@ setenv EDITOR nvim
 # Environment
 export BAT_CONFIG_PATH="~/.config/bat/config"
 
+# Start in Vi mode
+fish_vi_key_bindings
+
 # ALIASES
 alias uc="brew upgrade; brew cleanup"
+alias dockerclean="docker system prune -a -f; docker volume prune -f; docker image prune -a -f"
 alias k=kubectl
 alias tf=terraform
 alias g=gcloud
@@ -44,3 +48,5 @@ bass source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 function fish_greeting
   fortune -a
 end
+
+starship init fish | source
