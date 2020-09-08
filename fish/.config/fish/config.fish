@@ -51,5 +51,3 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 function fish_greeting
   fortune -a
 end
-
-starship init fish | source
