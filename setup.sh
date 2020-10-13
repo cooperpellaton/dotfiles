@@ -28,9 +28,8 @@ sudo apt update && sudo apt install -qq \
 # Now move on to dotfile configuration.
 cd ~
 
-# Install all the files programs and themes, etc. that we want.
+# Install some external programs.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone https://github.com/cooperpellaton/dotfiles.git
 wget https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb
 sudo dpkg -i bat_0.10.0_amd64.deb && rm bat_0.10.0_amd64.deb
 
