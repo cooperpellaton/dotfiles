@@ -1,18 +1,18 @@
 #!/usr/local/bin/fish
-# file: fish.sh
+# file: setup.fish
 
 # Install OMF
 if test -d ~/.config/omf
-  echo "OMF already installed."
+    echo "OMF already installed."
 else
-  echo "Installing oh-my-fish!"
-  curl -L https://get.oh-my.fish | fish
+    echo "Installing oh-my-fish!"
+    curl -L https://get.oh-my.fish | fish
 end
 
 # Install fish plugins
-set -l plugins fish-kubectl-completions fish-nvm brew-completions bass eclm fish-spec
+set -l plugins fish-kubectl-completions fish-docker-compose fish-nvm bass eclm fish-spec fzf google-cloud-sdk-fish-completion
 for plug in $plugins
-  omf install $plug
+    omf install $plug
 end
 echo "Fish plugins installed!"
 
