@@ -47,23 +47,12 @@ This repo will bootstrap itself with the necessary programs to configure a compu
 │           └── spell
 │               ├── en.utf-8.add
 │               └── en.utf-8.add.spl
-├── pbcopy
 ├── setup.fish
 ├── setup.sh
 ├── tmux
 │   └── .tmux.conf
 └── vim
     └── .vimrc
-```
-
-To get these files to be used by our system the script will do the following:
-
-```bash
-$ cd ~/dotfiles
-$ stow bash
-$ stow nvim
-$ stow vim
-$ stow fish
 ```
 
 This will create a symbolic link for every file in each of those folders into our root directory, thus allowing us to use the configuration files.
