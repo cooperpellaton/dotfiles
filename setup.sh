@@ -11,32 +11,13 @@ fi
 
 # Install some platform tools.
 sudo apt update && sudo apt install -qq \
-	default-jdk \
-	cmake \
-	gcc \
-	g++ \
-	curl \
-	wget \
-	git \
-	stow \
-	tmux \
-	neovim \
-	fish \
-	ripgrep \
-	htop
+	curl git stow tmux neovim fish ripgrep bat fzf
 
 # Now move on to dotfile configuration.
 cd ~
 
 # Install some external programs.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-wget https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb
-sudo dpkg -i bat_0.10.0_amd64.deb && rm bat_0.10.0_amd64.deb
-
-# Install Miniconda for Python 3.8
-cd /tmp/ && curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
 
 # Install NVM; we can set the version later.
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
@@ -47,16 +28,10 @@ chown $USER: ~/.vim/
 
 # Now unpack the configuration files for our programs.
 cd ~/dotfiles/
-rm ~/.bashrc && stow bash
-stow ssh
 stow nvim
 rm ~/.vimrc && stow vim
 stow fish
 vim +PluginInstall +qall
-
-# Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
 
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"

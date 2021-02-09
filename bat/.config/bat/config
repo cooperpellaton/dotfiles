@@ -1,5 +1,5 @@
 # Set the theme to "TwoDark"
---theme="OneHalfDark"
+--theme="Solarized (light)"
 
 # Add mouse scrolling support in less (does not work with older
 # versions of "less")

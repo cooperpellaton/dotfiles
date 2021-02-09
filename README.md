@@ -2,12 +2,12 @@
 
 ## Overview
 
-To get these files up and working on your system (assuming Ubuntu) run the [`setup.sh`](setup.sh) script which will install all the packages and even configure [fish](https://fishshell.com/) using [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish).
+To get these files up and working on your system (assuming Ubuntu/Debian) run the [`setup.sh`](setup.sh) script which will install all the packages and even configure [fish](https://fishshell.com/) using [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish).
 
 ## Installation
 
 ```bash
-$ git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles && sudo bash ~/dotfiles/setup.sh
+git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles && sudo bash ~/dotfiles/setup.sh
 ```
 
 ## Explanation
@@ -21,8 +21,6 @@ This repo will bootstrap itself with the necessary programs to configure a compu
 ├── .gitmodules
 ├── Brewfile
 ├── README.md
-├── bash
-│   └── .bashrc
 ├── bat
 │   └── .config
 │       └── bat
