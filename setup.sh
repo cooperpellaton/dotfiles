@@ -15,6 +15,7 @@ sudo apt update && sudo apt install -yq --no-install-recommends \
 # Non-package-manager managed dependencies.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+(cd /usr/local/bin; curl -O https://raw.githubusercontent.com/lemnos/theme.sh/master/theme.sh)
 
 # Now move on to dotfile configuration.
 git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles
