@@ -22,7 +22,6 @@ git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles
 # Now unpack the configuration files for our programs.
 cd ~/dotfiles/ || exit
 stow nvim
-rm ~/.vimrc && stow vim
 stow fish
 vim +PluginInstall +qall
 
