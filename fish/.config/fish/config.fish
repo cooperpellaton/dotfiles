@@ -6,6 +6,10 @@
 # Environment
 export BAT_CONFIG_PATH="~/.config/bat/config"
 
+# note: this erases the default fish_mode_prompt, which adds a vi mode
+# indicator to the left of your prompt
+function fish_mode_prompt; end
+
 # Start in Vi mode
 fish_vi_key_bindings
 
