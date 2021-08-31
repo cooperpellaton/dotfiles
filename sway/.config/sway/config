@@ -12,6 +12,9 @@ set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
+### Workspace settings
+workspace_layout stacking
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -53,8 +56,10 @@ output * bg $bg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output eDP-1 scale 1.0
-output DP-1 res 2560x2160 scale 1.0
-output DP-2 res 2560x2160 scale 1.0
+output DP-1 resolution 2560x2160
+output DP-2 resolution 2560x2160
+workspace 2 output DP-1
+workspace 2 output DP-1
 
 ### Idle configuration
 #
@@ -257,6 +262,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    font MonoLisa 10
     position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
