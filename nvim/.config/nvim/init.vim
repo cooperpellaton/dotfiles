@@ -9,79 +9,62 @@ set clipboard=unnamed
 set swapfile
 set dir=~/.swap-files
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins are listed below.
-Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'itchyny/lightline.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'junegunn/fzf.vim'
-Plugin 'chaoren/vim-wordmotion'
-Plugin 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plugin 'tpope/vim-endwise'
-Plugin 'ncm2/float-preview.nvim'
-Plugin 'Shougo/echodoc.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'psliwka/vim-smoothie'
-Plugin 'mbbill/undotree'
-Plugin 'autozimu/LanguageClient-neovim', {
+" Plugs are listed below.
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/fzf.vim'
+Plug 'chaoren/vim-wordmotion'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-endwise'
+Plug 'ncm2/float-preview.nvim'
+Plug 'Shougo/echodoc.vim'
+Plug 'majutsushi/tagbar'
+Plug 'psliwka/vim-smoothie'
+Plug 'mbbill/undotree'
+Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
 
 " Themes
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 
-" Language Plugins
-Plugin 'chrisbra/csv.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'elzr/vim-json'
-Plugin 'rust-lang/rust.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'hashivim/vim-terraform'
-Plugin 'dag/vim-fish'
+" Language Plugs
+Plug 'chrisbra/csv.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'elzr/vim-json'
+Plug 'rust-lang/rust.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'dag/vim-fish'
 
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
 " Automatically close the Deoplete preview window after completion
 " (https://github.com/Shougo/deoplete.nvim/issues/115)
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" All of your Plugs must be added before the following line
+call plug#end()            " required
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -154,7 +137,7 @@ set pumheight=10
 " VISUAL "
 """"""""""
 highlight Comment cterm=italic gui=italic
-set background=dark
+set bg=dark
 colorscheme PaperColor
 
 " lightline config.
