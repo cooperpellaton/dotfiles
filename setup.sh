@@ -10,12 +10,15 @@ fi
 
 # Install some platform tools.
 sudo apt update && sudo apt install -yq --no-install-recommends \
-	git stow tmux neovim fish ripgrep bat fzf
+	git stow tmux neovim fish ripgrep bat fzf feh
 
 # Non-package-manager managed dependencies.
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-(cd /usr/local/bin; curl -O https://raw.githubusercontent.com/lemnos/theme.sh/master/theme.sh)
+nvm_version=v0.38.0
+delta_version=0.8.3
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$nvm_version/install.sh | bash
+curl -O https://github.com/dandavison/delta/releases/download/$delta_version/git-delta_${delta_version}_amd64.deb && sudo dpkg -i git-delta_0.8.3_amd64.deb
 
 # Now move on to dotfile configuration.
 git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles
@@ -24,11 +27,10 @@ git clone https://github.com/cooperpellaton/dotfiles.git ~/dotfiles
 cd ~/dotfiles/ || exit
 stow nvim
 stow fish
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 # We did this all with `sudo` so we need to change permissions.
-sudo chown -R "$USER": ~/.tmux/
-sudo chown -R "$USER": ~/.vim/
+sudo chown -R "$USER": ~/.config
 
 # Configure git.
 git config --global user.email "cooper@cooperpellaton.com"
