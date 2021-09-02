@@ -1,3 +1,6 @@
 [submodule "themes/tmux-themepack"]
 	path = themes/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
+[submodule "kitty/.config/kitty/kitty-themes"]
+	path = kitty/.config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
