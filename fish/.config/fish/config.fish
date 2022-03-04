@@ -23,17 +23,7 @@ alias ip="curl icanhazip.com" # Get current external IP
 alias vim="nvim"
 alias vi="nvim"
 alias rm="rm -i"
-set -x EDITOR kak
-
-# Add flatpak to XDG_DATA_DIR
-set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
-set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-
-for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
-    if test -d $flatpakdir
-        contains $flatpakdir $PATH; or set -a PATH $flatpakdir
-    end
-end
+set -x EDITOR nvim 
 
 # Use RipGrep in FZF
 set FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
