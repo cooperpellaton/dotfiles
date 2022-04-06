@@ -15,15 +15,11 @@
 [push]
 	default = tracking
 [diff]
-  renames = copies
-  mnemonicprefix = true
-  compactionHeuristic = true
+    renames = copies
+    mnemonicprefix = true
+    compactionHeuristic = true
 [rebase]
-	autoStash = true
-[log]
-  date = short
-[format]
-  pretty = format:%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s
+    autoStash = true
 [pager]
     diff = delta
     log = delta
@@ -33,7 +29,7 @@
     line-numbers = true
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
+    syntax-theme = Solarized (dark)
     navigate = true
 [interactive]
     diffFilter = delta --color-only
