@@ -2,13 +2,11 @@
 	helper = store
 [user]
 	name = Cooper Pellaton
-	email = cooper@memorahealth.com
-	signingkey = ADCEAB03BA06B5AE
-[sequence]
-	editor = interactive-rebase-tool
+	email = c@cepp.ch
 [merge]
 	conflictstyle = diff3
 [rerere]
+	# https://www.git-scm.com/book/en/v2/Git-Tools-Rerere
 	enabled = 1
 [color]
 	ui = auto
