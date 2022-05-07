@@ -3,5 +3,5 @@ jorgebucaran/nvm.fish
 jorgebucaran/hydro
 PatrickF1/fzf.fish
 brgmnn/fish-docker-compose
-lgathy/google-cloud-sdk-fish-completion
 jhillyerd/plugin-git
+lgathy/google-cloud-sdk-fish-completion

@@ -1,7 +1,0 @@
-prompt=
-term=kitty
-layer=overlay
-always_parse_args=true
-width=25%
-insensitive=true
-key_expand=Shift_L-Right

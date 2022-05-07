@@ -25,7 +25,7 @@ abbr -a -g ip curl icanhazip.com # Get current external IP
 alias vim="nvim"
 alias vi="nvim"
 alias rm="rm -i"
-set -x EDITOR nvim 
+set -x EDITOR emacs 
 
 zoxide init fish | source
-kubectl completion fish | source
+# kubectl completion fish | source
