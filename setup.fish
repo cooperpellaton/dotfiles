@@ -11,6 +11,9 @@ git config --global user.name "Cooper Pellaton"
 # Make fish the default shell.
 chsh -s /usr/bin/fish
 
+# Ensure we can find `fortune` on the path
+fish_add_path /usr/games
+
 # Install fisher to manage fish shell dependencies.
 if type -q fisher
     echo "Fisher already installed."

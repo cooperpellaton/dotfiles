@@ -1,39 +1,48 @@
-FROM debian:bullseye
-ENV DEBIAN_FRONTEND=noninteractive
+FROM ubuntu:22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
 ARG USERNAME=cooper
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
 ARG DELTA_VERSION=0.12.1
-WORKDIR /tmp
+ARG BAT_VERSION=0.20.0
+ARG HOME=/home/${USERNAME}
+
+ENV TERM xterm-256color
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Install dependencies.
 RUN apt-get update \ 
-    && apt-get install -y --no-install-recommends curl gpg ca-certificates \ 
-    # subscribe to fish upstream
-    && echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list \
-    && curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null \
-    && apt-get update && apt-get install -y fish git stow tmux neovim ripgrep fzf zoxide fortunes fortune-mod \
+    && apt-get install -y --no-install-recommends curl gpg ca-certificates locales sudo gosu \ 
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+    && locale-gen
+
+# Create the user
+RUN useradd -m $USERNAME \
+    && usermod -aG sudo ${USERNAME} \
+    && echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers \
+    && sed s/required/sufficient/g -i /etc/pam.d/chsh
+
+# User dependencies.
+WORKDIR /tmp
+RUN  apt-get update \
+    && apt-get install -y --no-install-recommends \
+        fish git stow tmux neovim ripgrep fzf zoxide fortune-mod fortunes \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     # non package-manager managed
     && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-    && curl -fLo bat.deb https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb && dpkg -i bat.deb \
+    && curl -fLo bat.deb "https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat_${BAT_VERSION}_amd64.deb" && dpkg -i bat.deb \
     && curl -fLo delta.deb "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/git-delta_${DELTA_VERSION}_amd64.deb" && dpkg -i delta.deb \
-    && rm -r /tmp/*
-# Create the user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
-    && apt-get update \
-    && apt-get install -y --no-install-recommends sudo \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
-USER $USERNAME
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-COPY . /home/$USERNAME/dotfiles/
-RUN sudo chown -R $USERNAME:$USERNAME /home/$USERNAME/dotfiles/
-WORKDIR /home/$USERNAME/dotfiles
-RUN fish setup.fish
+    && rm -rf /tmp/*
+
+COPY . ${HOME}/dotfiles/
+RUN chown -R ${USERNAME}:${USERNAME} ${HOME}
+WORKDIR ${HOME}/dotfiles
+RUN gosu ${USERNAME} fish setup.fish
+
+USER ${USERNAME}
+WORKDIR ${HOME}
 ENTRYPOINT [ "/usr/bin/fish" ]
