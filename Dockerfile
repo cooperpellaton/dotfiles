@@ -26,7 +26,7 @@ RUN useradd -m $USERNAME \
 
 # User dependencies.
 WORKDIR /tmp
-RUN  apt-get update \
+RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         fish git stow tmux neovim ripgrep fzf zoxide fortune-mod fortunes \
     && apt-get clean \
@@ -41,7 +41,7 @@ RUN  apt-get update \
 COPY . ${HOME}/dotfiles/
 RUN chown -R ${USERNAME}:${USERNAME} ${HOME}
 WORKDIR ${HOME}/dotfiles
-RUN gosu ${USERNAME} fish setup.fish
+RUN gosu ${USERNAME} bash setup.sh
 
 USER ${USERNAME}
 WORKDIR ${HOME}

@@ -1,5 +1,4 @@
-#!/usr/local/bin/fish
-# file: setup.fish
+#!/usr/bin/env bash
 
 # Unpack the configuration files for our programs.
 stow fish bat git nvim tmux
@@ -12,14 +11,13 @@ git config --global user.name "Cooper Pellaton"
 chsh -s /usr/bin/fish
 
 # Ensure we can find `fortune` on the path
-fish_add_path /usr/games
+fish -c "fish_add_path /usr/games"
 
 # Install fisher to manage fish shell dependencies.
-if type -q fisher
-    echo "Fisher already installed."
-else
+FISHER_INSTALL_LOCATION=$HOME/.config/fish/functions/fisher.fish
+if [[ ! -d $FISHER_INSTALL_LOCATION ]]; then
     # Install fish plugins
     echo "Installing fisher!"
-    curl -sL git.io/fisher | source && fisher update
+    fish -c "curl -sL git.io/fisher | source && fisher update"
     echo "Fish plugins installed!"
-end
+fi
