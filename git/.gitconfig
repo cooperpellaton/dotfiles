@@ -1,17 +1,17 @@
 [credential]
-	helper = store
+    helper = store
 [user]
-	name = Cooper Pellaton
-	email = c@cepp.ch
+    name = Cooper Pellaton
+    email = c@cepp.ch
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
 [rerere]
-	# https://www.git-scm.com/book/en/v2/Git-Tools-Rerere
-	enabled = 1
+    # https://www.git-scm.com/book/en/v2/Git-Tools-Rerere
+    enabled = 1
 [color]
-	ui = auto
+    ui = auto
 [push]
-	default = tracking
+    default = tracking
 [diff]
     renames = copies
     mnemonicprefix = true

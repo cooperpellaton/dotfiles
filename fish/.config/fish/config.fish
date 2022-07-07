@@ -19,11 +19,7 @@ abbr -a -g k kubectl
 abbr -a -g tf terraform
 abbr -a -g g gcloud
 abbr -a -g ip curl icanhazip.com # Get current external IP
-# alias vim to nvim because we're ~~modern~~
-alias vim="nvim"
-alias vi="nvim"
 alias rm="rm -i"
-set -x EDITOR emacs 
 
 zoxide init fish | source
 # kubectl completion fish | source
