@@ -3,10 +3,6 @@
 # Unpack the configuration files for our programs.
 stow fish bat git nvim tmux
 
-# Configure git.
-git config --global user.email "c@cepp.ch"
-git config --global user.name "Cooper Pellaton"
-
 # Make fish the default shell.
 chsh -s /usr/bin/fish
 
