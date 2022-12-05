@@ -18,6 +18,11 @@
     compactionHeuristic = true
 [rebase]
     autoStash = true
+[fetch]
+    prune = true
+    parallel = 3
+[submodule]
+    fetchJobs = 3
 [pager]
     diff = delta
     log = delta
@@ -31,3 +36,15 @@
     navigate = true
 [interactive]
     diffFilter = delta --color-only
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[gitflow "branch"]
+  master = master
+  develop = develop
+[gitflow "prefix"]
+  feature = feature/
+  release = release/
+  hotfix = hotfix/
+  bugfix = bugfix/
+  support = support/
+  versiontag = v
